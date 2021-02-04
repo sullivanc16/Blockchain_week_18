@@ -9,3 +9,17 @@ This weeks homework, we are creating a test network through blockchain for ZBank
 3. Now that we have successful created both test accounts and taken notes on our public access to the key as well as our path of the secret key, we are ready to setup our genesis block. The genesis block will allow us to run our network. Please insert the command "./puppeth" into your terminal. After you have inserted this command press enter. Now you will choose the Clique Proof of Authority by selecting the following steps. "Configure New Genesis" or 2, press enter, "Create New Genesis From Scratch" or 1, press enter, "Clique-Proof-Of-Authority" or 2, press enter. 
 <img width="647" alt="Screen Shot 2021-02-03 at 10 16 27 PM" src="https://user-images.githubusercontent.com/70147930/106840140-8abc5980-666d-11eb-8e20-7e1419256be6.png">
 
+4. Wahoo! You're doing great! Now that you have choosen a Clique Proof of Authority you will need to designate an amount of time for the blocks. The question will appear as "How many seconds should blocks take?". The default for this question is 15 seconds and can remain at 15 seconds. Remember those public keys I told you to write down? They are about to come in handy! After selecting 15 seconds for the time for the blocks you will be prompted to list the public keys. Notice how your public key and the command already has "0x" listed. TAKE NOTE - these do not need to be listed twice, please either remove the 0x from your public or the command line. When prompted to pre-fund the pre-compiled accounts please say no. See below for details. 
+<img width="627" alt="Screen Shot 2021-02-03 at 10 24 26 PM" src="https://user-images.githubusercontent.com/70147930/106840674-a1af7b80-666e-11eb-82f9-27d3c926c1e6.png">
+
+5. Great job! Now there is a written in question for you to create a chain or network ID. Please be sure to remember this combination. I am doing 1998 because that was the year I was born. You will be directed to answer two more questions and answer them as follows: "Manage Existing Genesis" or 2, press enter, "Export Genesis Configuration" or 2, press enter, press enter once more to save genesis to the current directory. Be sure to remember your network name! Mine is puppernet2.json 
+<img width="653" alt="Screen Shot 2021-02-03 at 10 28 43 PM" src="https://user-images.githubusercontent.com/70147930/106840996-3a45fb80-666f-11eb-8057-9d574a13c643.png">
+
+Now we get to the good stuff! We are now going to link the nodes to the new network (remember when I told you to remember your network name). My code will look as follows: ./geth --datadir node1 init puppernet2.json and ./geth --datadir node2 init puppernet2.json. I used both commands in separate tabs in the terminal and ran into no trouble. My page is very long for both of these and will not be adding a screenshot.
+
+Here we goooo!! Time to start mining some blocks through the nodes you just created! For node1, run the command "./geth --datadir node1 --unlock "SEALER_ONE_ADDRESS" --mine --minerthreads 1 --rpc --allow-insecure-unlock". For SEALER_ONE_ADDRESS put your 1st public key minus the 0x. 
+
+
+
+
+
